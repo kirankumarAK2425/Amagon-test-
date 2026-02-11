@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,16 +30,14 @@ public class NewTest___1 {
 	public void setup() {
 		extent.attachReporter(sparkreporter);
 		WebDriverManager.chromedriver().setup();
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--start-maximized");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		// driver = new ChromeDriver(options);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		driver.get("https://www.amazon.in/");
 	}
 
 	@Test
+	
 	public void verifyAddToCart() throws Exception {
 		ExtentTest test = extent.createTest("Search Product");
 		test.info("Launching Chrome browser");
